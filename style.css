@@ -629,33 +629,3 @@ html {
     }
 
 }
-
-/* Always prevent horizontal scroll globally */
-html, body {
-  overflow-x: hidden;
-}
-
-/* The menu container */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #fff; /* or whatever your bg color is */
-  z-index: 9999;
-  overflow-y: auto; /* allow vertical scroll inside if menu is tall */
-  transform: translateX(100%); /* hidden off screen initially */
-  transition: transform 0.3s ease;
-}
-
-/* When the menu is active / open */
-.mobile-menu.open {
-  transform: translateX(0);
-}
-
-/* Disable background scroll when menu open */
-body.menu-open {
-  overflow: hidden;
-}
