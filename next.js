@@ -76,4 +76,12 @@ dots.forEach((dot, i) => {
 });
 
 
+const toggleBtn = document.querySelector('.menu-toggle'); // your toggle button
+const mobileMenu = document.querySelector('.mobile-menu');
+const body = document.body;
+
+toggleBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  body.classList.toggle('menu-open');
+});
 
