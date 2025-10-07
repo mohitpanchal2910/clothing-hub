@@ -17,17 +17,7 @@ function addToCart(item) {
   li.textContent = item + " added to cart!";
   cartItems.appendChild(li);
 }
-
-
-// Mobile menu toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
-
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
   
-
 // ===== SCROLL REVEAL =====
 function reveal() {
   let reveals = document.querySelectorAll(".reveal");
@@ -73,4 +63,20 @@ dots.forEach((dot, i) => {
     dots.forEach(dot => dot.classList.remove("active"));
     dots[index].classList.add("active");
   });
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+// Toggle menu on hamburger click
+menuToggle.addEventListener("click", (e) => {
+    navLinks.classList.toggle("show");
+    e.stopPropagation(); // Prevent event from bubbling to document
+});
+
+// Close menu if clicked outside
+document.addEventListener("click", (e) => {
+    if (navLinks.classList.contains("show") && !navLinks.contains(e.target) && e.target !== menuToggle) {
+        navLinks.classList.remove("show");
+    }
 });
